@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="AgoraTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESX-Hn-Opu">
+                                <rect key="frame" x="10" y="748" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UeE-ls-Af0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Video Call">
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startVideoCallButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pSP-UM-aIT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ESX-Hn-Opu" secondAttribute="bottom" constant="20" id="Obc-gU-1IS"/>
+                            <constraint firstItem="ESX-Hn-Opu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aSu-t6-S6X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ESX-Hn-Opu" secondAttribute="trailing" constant="10" id="b1X-qv-WEh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="-2"/>
+        </scene>
+        <!--Video Chat View Controller-->
+        <scene sceneID="fh3-SN-5TF">
+            <objects>
+                <viewController storyboardIdentifier="VideoCallViewController" id="M01-9s-IPM" customClass="VideoChatViewController" customModule="AgoraTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oJT-fQ-xw9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJZ-Yr-S1U">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for user to join" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmM-JA-u6E">
+                                        <rect key="frame" x="61.333333333333329" y="366" width="210.66666666666669" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-6x-dzf">
+                                        <rect key="frame" x="282" y="354.66666666666669" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="cSa-fq-eyi"/>
+                                            <constraint firstAttribute="height" constant="50" id="kD9-JV-EHE"/>
+                                        </constraints>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gcJ-6x-dzf" firstAttribute="leading" secondItem="BmM-JA-u6E" secondAttribute="trailing" constant="10" id="6ds-2C-9Fq"/>
+                                    <constraint firstItem="BmM-JA-u6E" firstAttribute="centerX" secondItem="yJZ-Yr-S1U" secondAttribute="centerX" constant="-30" id="bUq-bi-auP"/>
+                                    <constraint firstItem="BmM-JA-u6E" firstAttribute="centerY" secondItem="yJZ-Yr-S1U" secondAttribute="centerY" id="jcV-hq-Tji"/>
+                                    <constraint firstItem="gcJ-6x-dzf" firstAttribute="centerY" secondItem="yJZ-Yr-S1U" secondAttribute="centerY" id="sJS-09-JdY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-qt-gwP">
+                                <rect key="frame" x="283" y="69" width="100" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="G7A-Rr-X9r"/>
+                                    <constraint firstAttribute="height" constant="160" id="ObV-U1-s6q"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt1-uT-jXh">
+                                <rect key="frame" x="10" y="758" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MA3-xG-zCQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="End Call">
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="endCallButtonAction:" destination="M01-9s-IPM" eventType="touchUpInside" id="FxX-UU-4mv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="maC-AO-XPg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yJZ-Yr-S1U" firstAttribute="bottom" secondItem="maC-AO-XPg" secondAttribute="bottom" id="Dcx-rr-IwD"/>
+                            <constraint firstItem="yJZ-Yr-S1U" firstAttribute="top" secondItem="maC-AO-XPg" secondAttribute="top" id="TTm-9z-Quk"/>
+                            <constraint firstItem="Zt1-uT-jXh" firstAttribute="leading" secondItem="maC-AO-XPg" secondAttribute="leading" constant="10" id="X0t-00-5vn"/>
+                            <constraint firstAttribute="trailing" secondItem="yJZ-Yr-S1U" secondAttribute="trailing" id="XVg-Nf-0m3"/>
+                            <constraint firstItem="maC-AO-XPg" firstAttribute="trailing" secondItem="Zt1-uT-jXh" secondAttribute="trailing" constant="10" id="buG-Eu-6lP"/>
+                            <constraint firstItem="zDc-qt-gwP" firstAttribute="top" secondItem="maC-AO-XPg" secondAttribute="top" constant="10" id="fiV-Uh-4cQ"/>
+                            <constraint firstItem="maC-AO-XPg" firstAttribute="bottom" secondItem="Zt1-uT-jXh" secondAttribute="bottom" constant="10" id="xaN-ce-Zzz"/>
+                            <constraint firstItem="yJZ-Yr-S1U" firstAttribute="leading" secondItem="oJT-fQ-xw9" secondAttribute="leading" id="ysh-Et-qnd"/>
+                            <constraint firstItem="maC-AO-XPg" firstAttribute="trailing" secondItem="zDc-qt-gwP" secondAttribute="trailing" constant="10" id="zCE-tk-vjf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="gcJ-6x-dzf" id="fkn-7g-Iwh"/>
+                        <outlet property="label" destination="BmM-JA-u6E" id="fHX-fr-SwZ"/>
+                        <outlet property="localVideoView" destination="zDc-qt-gwP" id="X3X-YW-eRV"/>
+                        <outlet property="remoteVideoView" destination="yJZ-Yr-S1U" id="Nvn-kl-czX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qg7-Cv-fKQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.45801526717548" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
